@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素</title>
+    <style type="text/css">
+        .demo{  
+            border: 1px solid #faa;
+            width: 400px;
+            height: 300px;
+            padding: 10px;
+            margin: 0 auto;
+        }
+        .demo::first-letter{
+            font-size: 40px;
+            font-weight: bold;
+            color: aquamarine;
+            float: left;
+        }
+        .demo::first-line{
+            background-color: red;
+        }
+        .demo1::before{
+            content: url("../../assets/images/13.jpg");
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        css伪元素用于向某些选择器设置的特殊效果
+    </p>
+    <p>
+        :first-letter 将特殊的样式添加到文本的首字母
+    </p>
+    <p>
+        :first-line 将特殊的样式添加到文本的首行
+    </p>
+    <p>
+        上面的两个主要用于文本的样式， 下面的两个用于结构的样式
+    </p>
+    <hr>
+    <p>:before 在某元素之前插入某些内容</p>
+    <p>:after 在某元素之后插入某些内瓤</p>
+
+    <div class="demo">
+        指事物所包含的实质性事物。
+        1、物件里面所包容的东西。鲁迅《而已集·再谈香港》：“检查员的脸是青色的……他只将箱子的内容倒出，翻搅一通。” 郭沫若
+        《北伐途次》二二：“那个钱包是皮制的，已经很旧了，当着众人面前我替他打开来，从那里面取出的内容是：－－两个铜板和两张当票。”
+        2.事物内部所含的实质或意义。
+        3.哲学名词。指事物内在因素的总和。与“形式”相对。
+        反义词： 形式、实质
+    </div>
+    <div class="demo1">
+        ::before && ::after的使用     (伪元素内的content是必须存在的  没有内容可设置为空)
+    </div>
+</body>
+
+</html>

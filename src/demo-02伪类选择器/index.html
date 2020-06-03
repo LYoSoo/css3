@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器</title>
+    <style type="text/css">
+        a:link{
+            color: #333;
+        }
+        a:visited{
+            color: red;
+        }
+        a:hover{
+            color: #faa;
+        }
+        a.active{
+            color: yellow;
+        }
+
+
+        input:enabled{
+            background-color: green;
+        }
+        input:disabled{
+            background-color: #faa;
+        }
+        .demo{
+            border: 10px solid #EEE;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        .demo li {
+            float: left;
+            list-style: none;
+            padding: 2px;
+            border: 1px solid #faa;
+            /* margin-left: 5px; */
+        }
+        .demo a {
+            display: block;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+        .demo li:first-child{
+            background-color: #333;
+        }
+        .demo li:last-child{
+            background-color: #E9E9E9;
+        }
+    </style>
+</head>
+<body>
+    <a href="" >伪类</a>
+    <p>
+        动态伪类选择器， 不存在html中
+    </p>
+    <hr />
+    <input type="text" />  <br> 
+    <input type="text" disabled/> 
+    <p>
+        UI元素状态选择器
+    </p>
+    <hr>
+    <p>
+        结构伪类选择器
+    </p>
+    <div>
+        <ul class="demo">
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href="">5</a></li>
+            <li><a href="">6</a></li>
+            <li><a href="">7</a></li>
+            <li><a href="">8</a></li>
+            <li><a href="">9</a></li>
+            <li><a href="">10</a></li>
+        </ul>
+    </div>
+    <p>
+        ul li:first-child  第一个子元素
+        ul li:last-child   最后一个子元素
+    </p>
+    <p>
+        ul li:nth-child(3)      第三个
+        ul li:nth-child(n)      所有的
+        ul li:nth-child(2n){ ... } 偶数行
+        ul li:nth-child(2n+1){  }  奇数行
+        n + 5        第五个之后
+    </p>
+    <p>
+        nth-last-child(2)       从后面数第2个变化
+    </p>
+    <p>
+        ul li:nth-of-type(3)    type限制类型  li类型的     
+        ul li:nth-last-of-type(3)   倒数第三个
+        ul li:first-of-type        第一个（last-of-type最后一个）
+    </p>
+    <p>
+        .demo:only-child{
+            选择的元素是父元素下面的唯一的子元素  如果还有两个子元素 则不变
+        }
+    </p>
+    <p>
+        .demp li:only-type-of  限定元素类型
+    </p>
+    <p>
+        :empty      选择的子元素内无任何内容
+    </p>
+</body>
+</html>
