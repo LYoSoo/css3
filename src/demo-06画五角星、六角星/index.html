@@ -1,0 +1,95 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-04 16:20:36
+ * @LastEditTime: 2020-06-04 18:04:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \web-front-ends-libe:\normal-time\css3\src\demo-06画五角星、六角星\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画五角星、六角星</title>
+    <style type="text/css">
+        .five {
+            margin: 100px auto;
+            width: 0;
+            height: 0;
+            border-width: 80px 0px 80px 50px;
+            border-style: solid;
+            border-color: transparent transparent transparent #faa;
+            transform: rotate(-57deg);
+            position: relative;
+        }
+
+        .five::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-width: 80px 50px 80px 0px;
+            border-style: solid;
+            border-color: transparent #faa transparent transparent;
+            transform: rotate(115deg);
+            position: absolute;
+            top: -83px;
+            left: -50px;
+        }
+
+        .five::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-width: 0px 30px 86px 30px;
+            border-style: solid;
+            border-color: transparent transparent #faa transparent;
+            position: absolute;
+            transform: rotate(56deg);
+            left: -34px;
+            top: -61px;
+
+        }
+
+        .six {
+            width: 0;
+            height: 0;
+            margin: 100px auto;
+            border-width: 80px 50px 0 50px;
+            border-style: solid;
+            position: relative;
+            border-color: #faa transparent transparent transparent;
+        }
+
+        .six::before {
+            content: "";
+            width: 0;
+            height: 0;
+            margin: 100px auto;
+            border-width: 80px 50px 0 50px;
+            border-style: solid;
+            border-color: #faa transparent transparent transparent;
+            transform: rotate(180deg);
+            position: absolute;
+            left: -50px;
+            top: -200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="five">
+
+    </div>
+    <p>主要利用 border做成三角形 transform旋转角度伪元素 拼接在一起成为五角星</p>
+    <hr>
+    <div class="six">
+
+    </div>
+    <p>
+        利用border造成2个三角形 然后旋转覆盖 成为一个六角星
+    </p>
+</body>
+
+</html>
