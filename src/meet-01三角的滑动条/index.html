@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>三角形的滑动条</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .scroll-container {
+      margin: 100px;
+      width: 0px;
+      height: 0px;
+      border-width: 20px 230px 0px 0px;
+      border-style: solid;
+      border-color: transparent #ddd transparent transparent;
+      position: relative;
+    }
+
+    .scroll-bar {
+      width: 15px;
+      height: 15px;
+      background-color: #fff;
+      border: 1px solid #999;
+      border-radius: 2px;
+      position: absolute;
+      top: -15px;
+      left: 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scroll-container" id="scroll-container-id">
+    <div class="scroll-bar"></div>
+  </div>
+  <div class="desc" id="desc-id"></div>
+  <hr>
+  <p> 需求如下，antd没有这种三角形的滑动条 于是用C3自己写了一个</p>
+  <img src="./demand.png" />
+  <hr>
+  <p> 真实效果图</p>
+  <img src="./end.png" />
+</body>
+
+</html>
+<script>
+  // 获取元素
+  let scrollContainer = document.getElementById("scroll-container-id");
+  let bar = scrollContainer.children[0];
+  let desc = document.getElementById("desc-id");
+  // 鼠标滑动
+  bar.onmousedown = function (event) {
+    let eventcurrent = event || window.event;
+    var leftVal = eventcurrent.clientX - this.offsetLeft;
+    // 滑动放到down的里面
+    document.onmousemove = (e) => {
+      let moveEvent = e || window.event;
+      this.style.left = e.clientX - leftVal + "px";
+      // 大小范围
+      var val = parseInt(this.style.left);
+      if (val < 0) {
+        this.style.left = 0;
+      } else if (val > 215) {
+        this.style.left = "215px";
+      }
+      // 显示角度
+      desc.innerText = "角度:" + parseInt(parseInt(this.style.left) / 215 * 90) + "°";
+    }
+    // 鼠标抬起停止拖动
+    document.onmouseup = function () {
+      document.onmousemove = null;
+    }
+  }
+</script>
