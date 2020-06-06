@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画五边形和六边形</title>
+    <style type="text/css">
+        .demo {
+            width: 50px;
+            height: 50px;
+            margin: 100px auto;
+            border-width: 50px 50px 50px 50px;
+            border-style: solid;
+            border-color: red green #faa #333;
+        }
+
+        .five {
+            width: 50px;
+            height: 50px;
+            margin: 100px auto;
+            border-width: 50px 18px 0 18px;
+            border-style: solid;
+            border-color: red transparent #faa transparent;
+            position: relative;
+        }
+
+        .five::before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            margin: 100px auto;
+            border-width: 0 42px 35px 42px;
+            border-style: solid;
+            border-color: transparent transparent #f00 transparent;
+            position: absolute;
+            top: -185px;
+            left: -17px;
+        }
+
+        .six {
+            margin: 100px auto;
+            position: relative;
+            width: 100px;
+            height: 50px;
+            background-color: #faa;
+        }
+
+        .six::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: -50px;
+            width: 0;
+            height: 0;
+            border-width: 0px 50px 50px 50px;
+            border-style: solid;
+            border-color: transparent transparent #faa transparent;
+        }
+
+        .six::after {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top:50px;
+            width: 0;
+            height: 0;
+            border-width: 50px 50px 0px 50px;
+            border-style: solid;
+            border-color: #faa transparent transparent transparent;
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+
+    </div>
+    <div class="five">
+
+    </div>
+    <div class="six">
+
+    </div>
+</body>
+
+</html>
